@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('pages/about');
 })->name('about');
+Route::get('/student', function () {
+    return view('pages/create-student');
+})->name('student');
