@@ -29,9 +29,9 @@
 <label for="birthday">Birthday:</label>
 <input type="date" id="dob" name="birthday" >
 <br><br>
-<!-- <label for="email">Enter your email:</label>
+<label for="email">Enter your email:</label>
 <input type="email" id="email" name="email">
-<br><br> -->
+<br><br>
 <label for="phone">Enter your phone number:</label>
 <input type="phone" id="pno" name="phone" >
 <br><br>
