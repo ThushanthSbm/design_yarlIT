@@ -26,6 +26,7 @@
                 <li class="{{Request::is('about')?'active':''}}"><a href="{{url('/about')}}">About</a></li>
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{route('about')}}">About</a></li>
+                <li><a href="{{route('student')}}">Student</a></li>
                 <li><a href="{{url('/')}}">home</a></li>
             </ul></td>
         <td>
