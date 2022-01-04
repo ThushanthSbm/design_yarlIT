@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +24,5 @@ Route::get('/about', function () {
 Route::get('/student', function () {
     return view('pages/create-student');
 })->name('student');
+
+Route::resource('students', StudentController::class);
