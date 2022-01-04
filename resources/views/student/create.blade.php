@@ -13,7 +13,7 @@
 
         <label for="grade">Grade:</label>
             <select id="grade_id" name="grade_id">
-                <!-- <option value disabled selected>--Select Grade--</option> -->
+                
                     <option value="10">10A</option>
                     <option value="11">11B</option>
             </select><br><br>
@@ -32,19 +32,22 @@
             });
 
            $('#student-create').submit(function(e){
-               e.preventDefault();   //telling not to go to the form action or refresh
+               e.preventDefault();   
                
                $.ajax({
                    url:"{{route('students.store')}}",
                    data:{
-                       first_name:$("#first_name").val(),
-                       last_name:$("#last_name").val(),
-                       grade_id:$("#grade_id").val(),
+                       first_name:"thushanth",
+                       last_name:"sbm",
+                       grade_id:2
+                    //    first_name:$("#first_name").val(),
+                    //    last_name:$("#last_name").val(),
+                    //    grade_id:$("#grade_id").val(),
                     },
                    type:"POST",
                    success:function(data){
                        alert(data.success);
-                    //    alert(data.mydata);
+                    
                    }
                })
            });

@@ -12,7 +12,7 @@
         </div>
         
         <div class="col-md-4">
-            <a href="{{ route('students.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing" style="margin-top: 20px;">Create Student</a>
+            <a href="{{ route('students.create') }}" class="btn btn-lg btn-block btn-danger" style="margin-top: 20px;">Create Student</a>
             <hr>
         </div>       
     </div>
@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <table class="table">
                 <thead>
-                    <th>#</th>
+                    <th>Student ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Grade ID</th>
