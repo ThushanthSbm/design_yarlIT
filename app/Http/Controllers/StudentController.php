@@ -41,9 +41,9 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
-        return response()->json(['success'=>'Added new records.',"mydata"=>$request->input('first_name')]);
-        $data=$request->all();
-        return $data;
+        // return response()->json(['success'=>'Added new records.',"mydata"=>$request->input('first_name')]);
+        // $data=$request->all();
+        // return $data;
         //validation
         $this->validate($request,array(
             'first_name' => 'required|max:30',
@@ -57,8 +57,9 @@ class StudentController extends Controller
         $student->grade_id = $request->grade_id;
   
         $student->save();
+        return response()->json(['success'=>'Added new records.',"mydata"=>$request->input('first_name')]);
 
-        return redirect()->route('students.index')->with('message','save successfully'); 
+        // return redirect()->route('students.index')->with('message','save successfully'); 
     }
 
     /**

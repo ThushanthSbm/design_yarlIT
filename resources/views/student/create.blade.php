@@ -24,30 +24,25 @@
     @push('scripts')
     <script>
         $(document).ready(function(){
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
+           
            $('#student-create').submit(function(e){
-               e.preventDefault();   
-               
+               e.preventDefault();   //telling not to go to the form action or refresh
+               let urls = $('#student-create').attr('action');
+                // alert(url);
+
+               var fname=$("#first_name").val();
+               var lname=$("#last_name").val();
+               var grade=$("#grade_id").val();
                $.ajax({
-                   url:"{{route('students.store')}}",
+                   url:urls,
                    data:{
-                       first_name:"thushanth",
-                       last_name:"sbm",
-                       grade_id:2
-                    //    first_name:$("#first_name").val(),
-                    //    last_name:$("#last_name").val(),
-                    //    grade_id:$("#grade_id").val(),
+                       first_name:fname,
+                       last_name:lname,
+                       grade_id:grade,
                     },
                    type:"POST",
                    success:function(data){
                        alert(data.success);
-                    
                    }
                })
            });
