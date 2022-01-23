@@ -24,11 +24,16 @@
     @push('scripts')
     <script>
         $(document).ready(function(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+                }
+            })
            
            $('#student-create').submit(function(e){
-               e.preventDefault();   //telling not to go to the form action or refresh
+               e.preventDefault();  
                let urls = $('#student-create').attr('action');
-                // alert(url);
 
                var fname=$("#first_name").val();
                var lname=$("#last_name").val();
@@ -46,7 +51,24 @@
                    }
                })
            });
-        });
+        // $('#student-create').submit(function(e){
+        //     e.preventDefault();
+        //     $.ajax({
+        //         $.ajax({
+        //            url:"{{route('students.store')}}",
+        //            data:{
+        //                first_name:fname,
+        //                last_name:lname,
+        //                grade_id:grade,
+        //             },
+        //            type:"POST",
+        //            success:function(data){
+        //                alert(data.success);
+        //            }
+        //     })
+        //     // alert('test');
+        // })
+        // });
     </script>
     @endpush
 @endsection
